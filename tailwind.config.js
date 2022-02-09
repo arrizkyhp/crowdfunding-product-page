@@ -12,6 +12,7 @@ module.exports = {
         'grey-custom-500': '#727272',
         'grey-custom-600': '#414141',
         'blue-button-primary': '#3cb4ab',
+        'blue-button-primary-100': '#a9ccc6',
         'blue-button-hover': '#157a74',
       },
       fontFamily: {
