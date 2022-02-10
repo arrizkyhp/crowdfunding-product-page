@@ -8,7 +8,7 @@ export const Home = () => {
       
       <div className="bg-white relative  rounded-lg border border-slate-200 items-center flex flex-col py-16 w-full px-16 mb-8">
           <img src={logoMastercraft} alt="logo m" className='absolute -top-7 w-16' />
-          <h1 className='font-bold text-3xl mb-5'>Mastercraft Bamboo Monitor Riser</h1>
+          <h1 className='font-bold text-center md:text-left text-3xl mb-5'>Mastercraft Bamboo Monitor Riser</h1>
           <p className='text-lg text-grey-custom-400 mb-10'>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
           <div className=" flex flex-row items-center justify-between w-full">
               <button className='bg-blue-button-primary hover:bg-blue-button-hover transition ease-in-out duration-300 text-lg py-4 px-10 font-medium text-white rounded-full'>Back this project</button>
