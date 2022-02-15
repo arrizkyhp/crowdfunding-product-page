@@ -3,35 +3,33 @@ import iconBookmark from 'assets/images/icon-bookmark.svg'
 import { FaBookmark } from 'react-icons/fa'
 
 export const Home = () => {
-  return <main className="container flex flex-col items-center  max-w-3xl mt-56 ">
-
-      
-      <div className="bg-white relative  rounded-lg border border-slate-200 items-center flex flex-col py-16 w-full px-16 mb-8">
+  return <main className="container flex flex-col items-center px-4  max-w-3xl mt-48 md:mt-56 ">
+      <div className="bg-white relative  rounded-lg border border-slate-200 items-center flex flex-col md:py-16 pt-16 pb-10 w-full px-6 md:px-16 mb-8">
           <img src={logoMastercraft} alt="logo m" className='absolute -top-7 w-16' />
-          <h1 className='font-bold text-center md:text-left text-3xl mb-5'>Mastercraft Bamboo Monitor Riser</h1>
-          <p className='text-lg text-grey-custom-400 mb-10'>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+          <h1 className='font-bold text-center md:text-left  text-2xl md:text-3xl mb-5'>Mastercraft Bamboo Monitor Riser</h1>
+          <p className='text-lg text-grey-custom-400 mb-8 md:mb-10 text-center text-sm md:text-base'>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
           <div className=" flex flex-row items-center justify-between w-full">
               <button className='bg-blue-button-primary hover:bg-blue-button-hover transition ease-in-out duration-300 text-lg py-4 px-10 font-medium text-white rounded-full'>Back this project</button>
               <a href='/' className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
                   <div className="bg-grey-custom-600 text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-grey-custom-300 w-14 h-14 rounded-full flex justify-center items-center">
                     <img src={iconBookmark} alt="bookmark" className='group-hover:opacity-50 transition ease-in-out duration-300'/>
                   </div>
-                  <p className='font-bold text-grey-custom-500 group-hover:opacity-80 transition ease-in-out duration-300 text-lg py-4 pr-5'>Bookmark</p>
+                  <p className='font-bold text-grey-custom-500 group-hover:opacity-80 transition ease-in-out duration-300 text-lg py-4 pr-5 hidden md:inline-block'>Bookmark</p>
               </a>
           </div>
       </div>
 
-      <div className="bg-white relative  rounded-lg border border-slate-200 items-center flex flex-col py-16 w-full px-16 mb-8">
-         <div className="grid grid-cols-1 w-full justify-evenly gap-14 mb-8 md:grid-cols-3">
-          <div className="flex flex-col after:content-[''] relative after:w-[1px] after:bg-slate-300 after:h-16 after:right-0 after:absolute gap-2 border-gray-300 text-center md:text-justify border-solid">
+      <div className="bg-white relative  rounded-lg border border-slate-200 items-center flex flex-col py-16 w-full px-6 md:px-16 mb-8">
+         <div className="grid grid-cols-1 w-full justify-evenly gap-5 mb-8 md:grid-cols-3">
+          <div className="flex flex-col after:content-[''] relative after:w-28 after:h-[1px] md:after:w-[1px] after:bg-slate-300 md:after:h-16 after:absolute after:bottom-0 after:mx-auto after:right-0 md:after:right-0 after:left-0 md:after:left-auto  md:after:bottom-2 gap-2 pb-8 md:pb-0 border-gray-300 text-center md:text-justify border-solid">
             <p className='text-4xl font-bold'>$89,914</p>
             <p className='text-base text-gray-500'>of $100,000 backed</p>
           </div>
-          <div className="flex flex-col after:content-[''] relative after:w-28 after:h-[1px] md:after:w-[1px] after:bg-slate-300 md:after:h-16     after:absolute after:bottom-0 md:after:right-0 md:after:bottom-2 gap-2 border-gray-300 text-center md:text-justify border-solid">
+          <div className="flex flex-col after:content-[''] relative after:w-28 after:h-[1px] md:after:w-[1px] md:pl-8 after:bg-slate-300 md:after:h-16 after:absolute after:bottom-0 after:mx-auto after:right-0 md:after:right-0 after:left-0 md:after:left-auto  md:after:bottom-2 gap-2 pb-8 md:pb-0 border-gray-300 text-center md:text-justify border-solid">
             <p className='text-4xl font-bold'>5,007</p>
             <p className='text-base text-gray-500'>total backers</p>
           </div>
-          <div className="flex flex-col gap-2  text-center md:text-justify">
+          <div className="flex flex-col gap-2  text-center md:text-justify  md:pl-8">
             <p className='text-4xl font-bold'>56</p>
             <p className='text-base text-gray-500'>days left</p>
           </div>
