@@ -18,6 +18,9 @@ module.exports = {
       fontFamily: {
         'commisioner': ['Commissioner', 'sans-serif']
       },
+      lineHeight: {
+        'paragraph-m': '1.8'
+      }
     },
   },
   plugins: [],

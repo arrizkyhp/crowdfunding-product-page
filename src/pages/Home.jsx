@@ -29,10 +29,8 @@ export const Home = () => {
       </div>
 
       <ProjectInfo data={data} />
-      
-
-      <div className="bg-white relative rounded-lg border border-slate-200 items-center flex flex-col py-16 w-full px-16 mb-24">
-        <h1 className='text-2xl font-bold self-start mb-8'>About this project</h1>
+      <div className="bg-white relative rounded-lg border border-slate-200 items-center flex flex-col py-10 md:py-16 w-full px-6 md:px-16 mb-24">
+        <h1 className='text-xl md:text-2xl font-bold self-start mb-8'>About this project</h1>
         {parse(about)}
         {rewards.map(reward => {
           return <ProjectCard reward={reward} key={reward.id} />
