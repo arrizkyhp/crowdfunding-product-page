@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Button = (props) => {
   const className = [props.className];
@@ -8,11 +9,27 @@ const Button = (props) => {
   if(props.isBig) className.push("text-base md:text-lg py-4 px-10")
   if(props.isDisabled) className.push("bg-slate-300  cursor-not-allowed")
 
+  const onClick = () => {
+    if(props.onClick) props.onClick()
+  }
+
   return <button 
       className={`${className.join(" ")}`}
+      onClick={onClick}
     >
       {props.children}
   </button>;
 };
+
+Button.propTypes = {
+  onClick: PropTypes.func,
+  isButton: PropTypes.bool,
+  isPrimary: PropTypes.bool,
+  isMedium: PropTypes.bool,
+  isBig: PropTypes.bool,
+  isDisabled: PropTypes.bool,
+  className: PropTypes.string,
+
+}
 
 export default Button;

@@ -14,6 +14,7 @@ const Navbar = () => {
     })
   }
 
+  // Click outside close
   useEffect(() => {
     const checkIfClickedOutside = e => {
       // If the menu is open and the clicked target is not within the menu,
