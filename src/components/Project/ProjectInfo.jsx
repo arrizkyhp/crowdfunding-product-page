@@ -25,7 +25,7 @@ const ProjectInfo = ({ data }) => {
      </div>
     </div>
     <div className="bg-gray-100 w-full h-4 rounded-full">
-       <div className={`bg-blue-button-primary w-[${parseFloat(progress)}%] h-full rounded-full`}></div>
+       <div className={`bg-blue-button-primary w-[${progress}%] h-full rounded-full`}></div>
     </div>
  </div>
   )
