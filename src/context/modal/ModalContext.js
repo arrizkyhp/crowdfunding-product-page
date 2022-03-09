@@ -5,7 +5,9 @@ const ModalContext = createContext()
 
 export const ModalProvider = ({ children }) => {
     const initialState = {
-        modal: false
+        modal: false,
+        rewardSelected: {}
+
     }
 
     const [state, dispatch] = useReducer(modalReducer, initialState)

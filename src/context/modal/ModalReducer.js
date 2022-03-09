@@ -10,6 +10,11 @@ const modalReducer = (state, action) => {
                 ...state,
                 modal: !state.modal
             }
+        case 'SELECT_RADIO':
+            return {
+                ...state,
+                rewardSelected: action.payload
+            }
         default:
             return state
     }
