@@ -1,7 +1,19 @@
 import Button from 'components/Button';
 import CurrencyFormat from 'react-currency-format';
+import { useContext } from 'react';
+import ModalContext from 'context/modal/ModalContext';
 
 const ProjectCard = ({ reward }) => {
+
+    const {modal, dispatch} = useContext(ModalContext)
+
+    const handleSelect = (e) => {
+        dispatch({
+            type: 'SELECT_REWARD',
+            payload: e
+          })
+    }
+
   return (
     <div className={`border ${reward.status === 1 ? 'border-slate-300' : 'border-slate-200'} rounded-lg p-7 md:p-8 w-full mb-8 last:mb-0`}>
         <div className="flex flex-col md:flex-row justify-between mb-6">
@@ -15,7 +27,7 @@ const ProjectCard = ({ reward }) => {
                 <p className={`${reward.status === 1 ? 'text-slate-500' : 'text-slate-300'}`}>left</p>
             </div>
             {reward.status === 1 ? 
-                <Button isButton isPrimary isMedium children="Select Reward" /> :
+                <Button isButton isPrimary isMedium children="Select Reward" onClick={() => handleSelect(reward.id)}/> :
                 <Button isButton isDisabled isMedium children="Out of stock"/>
             }
         </div>

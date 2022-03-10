@@ -68,7 +68,7 @@ const Modal = ({data}) => {
                 <div  className={`${reward.status === 1 ? ' border-slate-300' : 'cursor-not-allowed border-slate-200'} border-2 rounded-lg`}>
                 <label htmlFor={reward.id} key={reward.id} className={`${reward.status === 1 ? 'cursor-pointer' : 'cursor-not-allowed '}`} >
                   <div className="py-8 px-6 pb-0 grid grid-cols-[fit-content(200px)_1fr] grid-rows-[1fr_fit-content(200px)]  gap-5 justify-start items-start ">
-                    <input type="radio" id={reward.id} name='reward' value={reward.id} className='w-11 h-7 border-2' disabled={reward.status === 1 ? '' : 'disabled'} onChange={() => handleCheckedModal(reward.id)}/>
+                    <input type="radio" id={reward.id} name='reward' value={reward.id} className='w-11 h-7 border-2' disabled={reward.status === 1 ? '' : 'disabled'} onChange={() => handleCheckedModal(reward.id)} checked={rewardSelected === reward.id ? true : false }/>
                     <div>
                     <div className='flex justify-between items-start'>
                       <div className="flex gap-4">
