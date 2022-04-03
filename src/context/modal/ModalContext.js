@@ -6,6 +6,7 @@ const ModalContext = createContext()
 export const ModalProvider = ({ children }) => {
     const initialState = {
         modal: false,
+        modal_success: false,
         rewardSelected: {}
 
     }

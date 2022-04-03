@@ -7,7 +7,6 @@ const Bookmark = (props) => {
     var { bookmark, dispatch } = useContext(BookmarkContext)
 
     const handleBookmark = () => {
-        console.log("text")
         dispatch({
             type: 'SWITCH_BOOKMARK'
         })

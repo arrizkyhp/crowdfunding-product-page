@@ -3,17 +3,30 @@ import CurrencyFormat from 'react-currency-format';
 import {useContext, useEffect, useRef } from 'react';
 import ModalContext from 'context/modal/ModalContext';
 import closeButton from 'assets/images/icon-close-modal.svg'
+import checkIcon from 'assets/images/icon-check.svg'
 import { FaDollarSign } from 'react-icons/fa'
 import Button from './Button';
+import InputPledge from './InputPledge';
+import RadioButton from './RadioButton';
 
 const Modal = ({data}) => {
     const ref = useRef()
-    var { modal, rewardSelected, dispatch } = useContext(ModalContext)
+    var { modal, modal_success, rewardSelected, dispatch } = useContext(ModalContext)
    
     const handleCloseModal = () =>  {
       dispatch({
         type: 'SWITCH_MODAL'
       })
+    }
+
+    const handleSuccesModal = () => {
+      function setModal() {
+        dispatch({
+          type: 'SWITCH_SUCCESS_MODAL',
+        })
+        window.scrollTo({top: 0, behavior: 'smooth'})
+      }
+     setTimeout(setModal, 500)
     }
 
     const handleCheckedModal = (e) => {
@@ -23,6 +36,7 @@ const Modal = ({data}) => {
         payload: newReward
       })
     }
+    
 
 
 
@@ -45,6 +59,28 @@ const Modal = ({data}) => {
       }, [modal])
 
 
+      // Modal Succes
+      if (modal_success) {
+        return (
+          <>
+            <div className={`bg-black w-full h-screen fixed top-0 z-10 transition-opacity delay-200  ${modal ? "inline-block opacity-30" : "h-0 opacity-0"}`}></div>
+            <div className={`flex-col gap-x-6 z-10 items-center md:text-white absolute md:transition-all ease-linear delay-200  bg-slate-600 md:bg-white top-[0px] inset-x-0 rounded-xl px-10 py-12  ${modal ? "flex md:top-[0px] " : "hidden md:top-[-200px]"}`} ref={ref}>
+            <img src={checkIcon} alt="success" className='w-20 mb-10' />
+            <h1 className='font-bold text-center text-3xl text-slate-900'>Thanks for your support!</h1>
+            <p className='text-slate-500 text-base leading-7 text-center my-6'>
+              Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+              an email once our campaign is completed.
+            </p>
+            <Button isButton isSmall isPrimary onClick={handleCloseModal}>Got it!</Button>
+            
+            </div>
+          </>
+
+        )
+      }
+
+
+  // Default Modal
   return (
       <>
         <div className={`bg-black w-full h-screen fixed top-0 z-10 transition-opacity delay-200  ${modal ? "inline-block opacity-30" : "h-0 opacity-0"}`}></div>
@@ -65,36 +101,24 @@ const Modal = ({data}) => {
 
             {data.map(reward => {
               return (
-                <div  className={`${reward.status === 1 ? ' border-slate-300' : 'cursor-not-allowed border-slate-200'} border-2 rounded-lg`}>
-                <label htmlFor={reward.id} key={reward.id} className={`${reward.status === 1 ? 'cursor-pointer' : 'cursor-not-allowed '}`} >
-                  <div className="py-8 px-6 pb-0 grid grid-cols-[fit-content(200px)_1fr] grid-rows-[1fr_fit-content(200px)]  gap-5 justify-start items-start ">
-                    <input type="radio" id={reward.id} name='reward' value={reward.id} className='w-11 h-7 border-2' disabled={reward.status === 1 ? '' : 'disabled'} onChange={() => handleCheckedModal(reward.id)} checked={rewardSelected === reward.id ? true : false }/>
-                    <div>
-                    <div className='flex justify-between items-start'>
-                      <div className="flex gap-4">
-                        <h2 className={`text-black text-[17px] ${reward.status === 1 ? '' : 'text-slate-400'} mb-4 font-bold`}>{reward.name}</h2>
-                        <p className={`${reward.status === 1 ? 'text-blue-button-primary' : 'text-blue-button-primary-100'} font-medium`}>Pledge <CurrencyFormat value={reward.pledge} displayType={'text'} thousandSeparator prefix={'$'} /> or more</p>
-                      </div>
-                      <div className="flex gap-1 items-center">
-                        <p className={`text-black font-bold ${reward.status === 1 ? '' : 'text-slate-400'}`}>{reward.amount}</p>
-                        <p className={`${reward.status === 1 ? 'text-slate-500' : 'text-slate-300'} text-sm`}>left</p>
-                      </div>
-                    </div>
-                      <p className={`${reward.status === 1 ? 'text-slate-500' : 'text-slate-400'} leading-7`}>{reward.description}</p>
-                    </div>
-                  </div>
-              
-                </label>
-                  
+                <div key={reward.id} className={`${reward.status === 1 ? ' border-slate-300' : 'cursor-not-allowed border-slate-200'} ${rewardSelected === reward.id ? 'border-2 border-blue-button-primary' : 'border-slate-300'} border-2 rounded-lg`}>
+                  <RadioButton 
+                    id={reward.id} 
+                    status={reward.status} 
+                    amount={reward.amount} 
+                    name={reward.name} 
+                    pledge={reward.pledge} 
+                    description={reward.description}
+                  />
                   {rewardSelected === reward.id && 
                     <div className='col-span-full border-t-2 px-6 py-6 flex justify-between items-center'>
                       <h1 className='text-grey-custom-400'>Enter your pledge</h1>
                       <div className='flex gap-5'>
                         <div className='relative'>
-                          <p className='text-slate-400 absolute top-[25px] left-6 '><FaDollarSign /></p>
-                          <input type="number" className='border text-black font-bold pl-12 border-slate-300 text-base md:text-lg py-4 px-10 rounded-full w-[130px]' />
+                          <p className='text-slate-400 absolute top-[25px] left-5 '><FaDollarSign /></p>
+                          <InputPledge pledge={reward.pledge} />
                         </div>
-                        <Button isButton isMedium isPrimary>Continue</Button>
+                        <Button isButton isMedium isPrimary onClick={handleSuccesModal}>Continue</Button>
                       </div>
                     </div>
                   }

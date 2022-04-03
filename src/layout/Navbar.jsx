@@ -34,7 +34,9 @@ const Navbar = () => {
   return <> 
   <div className={`bg-black w-full h-screen fixed top-0 opacity-30 z-10  ${menu ? "inline-block" : "hidden"}`}></div>
   <nav className="container mx-auto max-w-7xl px-6 mt-8 md:mt-10 flex flex-row justify-between items-center z-10 w-full">
-    <img src={logo} alt="" />
+   <a href="/">
+   <img src={logo} alt="" />
+   </a>
     <button>
     <img src={hamburger} alt="" onClick={handleMenu} className={`h-4 md:hidden ${!menu ? "inline-block" : "hidden"}`}/>
     <img src={closeMenu} alt="" onClick={handleMenu} className={`h-4 md:hidden ${menu ? "inline-block" : "hidden"}`}/>

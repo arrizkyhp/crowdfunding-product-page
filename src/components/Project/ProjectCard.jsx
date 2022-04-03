@@ -12,6 +12,7 @@ const ProjectCard = ({ reward }) => {
             type: 'SELECT_REWARD',
             payload: e
           })
+          window.scrollTo({top: 250, behavior: 'smooth'})
     }
 
   return (
