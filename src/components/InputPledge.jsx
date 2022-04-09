@@ -1,29 +1,25 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react'
  
-const InputPledge = ({pledge}) => {
+const InputPledge = (props) => {
     let [value, setValue] = useState("")
-    const handleInput = (e) => {
-        let inputNumber = e.target.value;
-  
-        setValue(inputNumber)
-        
+    const onChange = (e) => {
+        if (props.onChange) props.onChange(e);
     }
 
-    const handleInputBlur = (e) => {
-        if (value < pledge) {
-            setValue(pledge)
-        }
+    const onBlur = () => {
+        if (props.onBlur) props.onBlur(props.pledge)
     }
 
   return (
     <input 
         type="number" 
-        placeholder={pledge} 
-        className='border text-black font-bold pl-10 outline-2 outline-blue-button-primary border-slate-300 text-base md:text-lg py-4 pr-5 rounded-full w-[130px]' 
-        value={value} 
-        onChange={handleInput} 
-        onBlur={handleInputBlur}
+        placeholder={props.pledge} 
+        className='border text-black font-bold outline-2 outline-blue-button-primary border-slate-300 text-base md:text-lg py-3 pr-5 pl-10 rounded-full w-[110px] md:w-[130px]' 
+        value={props.valueInput} 
+        onChange={onChange} 
+        onBlur={onBlur}
+        required
     />
   )
 }

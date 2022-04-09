@@ -34,7 +34,7 @@ export const Home = () => {
               {bookmark && <Bookmark isBookmark />}
               {!bookmark && <Bookmark isNotBookmark />}
           </div>
-          <Modal data={data.item.rewards}/>
+          <Modal dataProject={data.item.rewards}/>
       </div>
       <ProjectInfo data={data} />
       <div className="bg-white relative rounded-lg border border-slate-200 items-center flex flex-col py-10 md:py-16 w-full px-6 md:px-16 mb-24">

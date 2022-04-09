@@ -5,6 +5,10 @@ import DataContext from "context/data/DataContext";
 
 const ProjectInfo = ({ data }) => {
   const progress = (data.item.backed / data.item.total_backed * 100).toFixed(2);
+  const progressBar = {
+    width:progress + "%",
+    maxWidth: "100%"
+  }
 
   return (
     <div className="bg-white relative rounded-lg border border-slate-200 items-center flex flex-col py-16 w-full px-6 md:px-16 mb-8">
@@ -25,7 +29,7 @@ const ProjectInfo = ({ data }) => {
      </div>
     </div>
     <div className="bg-gray-100 w-full h-4 rounded-full">
-       <div className={`bg-blue-button-primary w-[${progress}%] h-full rounded-full`}></div>
+       <div className={`bg-blue-button-primary h-full rounded-full`} style={progressBar}></div>
     </div>
  </div>
   )
