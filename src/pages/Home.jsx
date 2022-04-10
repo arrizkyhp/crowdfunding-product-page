@@ -9,6 +9,7 @@ import parse from 'html-react-parser';
 import Button from 'components/Button';
 import Bookmark from 'components/Bookmark';
 import Modal from 'components/Modal';
+import Attribution from 'layout/Attribution';
 
 export const Home = () => {
   const {data} = useContext(DataContext)
@@ -24,7 +25,8 @@ export const Home = () => {
     })
   } 
 
-  return <main className="container flex flex-col items-center px-4  max-w-3xl mt-48 md:mt-56 ">
+  return <>
+  <main className="container flex flex-col items-center px-4  max-w-3xl mt-48 md:mt-56 ">
       <div className="bg-white relative  rounded-lg border border-slate-200 items-center flex flex-col md:py-16 pt-16 pb-10 w-full px-6 md:px-16 mb-8">
           <img src={logoMastercraft} alt="logo m" className='absolute -top-7 w-16' />
           <h1 className='font-bold text-center md:text-left  text-2xl md:text-3xl mb-5'>{data.item.name}</h1>
@@ -45,5 +47,7 @@ export const Home = () => {
         })}
 
       </div>
-  </main>;
+  </main>
+  <Attribution />
+  </> 
 };
