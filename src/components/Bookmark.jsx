@@ -14,7 +14,7 @@ const Bookmark = (props) => {
 
     if(props.isBookmark) {
         return (
-            <button onClick={handleBookmark} className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
+            <button type='button' onClick={handleBookmark} className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
                   <span className="bg-blue-button-primary text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-blue-button-hover w-14 h-14 rounded-full flex justify-center items-center">
                       <FaBookmark className='text-white'/>
                   </span>
@@ -25,7 +25,7 @@ const Bookmark = (props) => {
 
     if(props.isNotBookmark) {
         return (
-            <button onClick={handleBookmark} className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
+            <button type='button' onClick={handleBookmark} className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
                 <span className="bg-grey-custom-600 text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-grey-custom-300 w-14 h-14 rounded-full flex justify-center items-center">
                     <FaBookmark className='text-slate-300'/>
                 </span>
