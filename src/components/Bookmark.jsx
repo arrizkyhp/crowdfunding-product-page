@@ -15,9 +15,9 @@ const Bookmark = (props) => {
     if(props.isBookmark) {
         return (
             <button onClick={handleBookmark} className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
-                  <div className="bg-blue-button-primary text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-blue-button-hover w-14 h-14 rounded-full flex justify-center items-center">
+                  <span className="bg-blue-button-primary text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-blue-button-hover w-14 h-14 rounded-full flex justify-center items-center">
                       <FaBookmark className='text-white'/>
-                  </div>
+                  </span>
                   <p className='font-bold text-blue-button-primary group-hover:text-blue-button-hover  group-hover:opacity-80 transition ease-in-out duration-300 text-lg py-4 pr-5 hidden md:inline-block'>Bookmarked</p>
             </button>
         )
@@ -26,11 +26,11 @@ const Bookmark = (props) => {
     if(props.isNotBookmark) {
         return (
             <button onClick={handleBookmark} className="group flex flex-row gap-3 bg-grey-custom-200  rounded-full">
-            <div className="bg-grey-custom-600 text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-grey-custom-300 w-14 h-14 rounded-full flex justify-center items-center">
-                <FaBookmark className='text-slate-300'/>
-            </div>
-            <p className='font-bold text-grey-custom-500 group-hover:opacity-80 transition ease-in-out duration-300 text-lg py-4 pr-5 hidden md:inline-block'>Bookmark</p>
-      </button>
+                <span className="bg-grey-custom-600 text-grey-custom-300 transition ease-in-out duration-300 group-hover:bg-grey-custom-300 w-14 h-14 rounded-full flex justify-center items-center">
+                    <FaBookmark className='text-slate-300'/>
+                </span>
+                <p className='font-bold text-grey-custom-500 group-hover:opacity-80 transition ease-in-out duration-300 text-lg py-4 pr-5 hidden md:inline-block'>Bookmark</p>
+            </button>
         )
     } 
 }
