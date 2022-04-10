@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- 📌 Solution URL: [Solution](https://arrizkyhp.github.io/fm-blogr-landing-page/)
-- 🎪 Live Site URL: [Live Site](https://arrizkyhp.github.io/fm-sunnyside-agency-landing-page/)
+- 📌 Solution URL: [Solution](https://github.com/arrizkyhp/fm-crowdfunding-product-page)
+- 🎪 Live Site URL: [Live Site](https://arrizkyhp.github.io/fm-crowdfunding-product-page/)
 
 ## My process
 
