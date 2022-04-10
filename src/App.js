@@ -15,7 +15,7 @@ function App() {
             <BookmarkProvider>
               <BrowserRouter>
                   <div className="flex flex-col justify-between font-commisioner">
-                    <div className="flex flex-col relative items-center bg-[url('assets/images/image-hero-mobile.jpg')] md:bg-[url('assets/images/image-hero-desktop.jpg')]  max-h-[25rem] bg-no-repeat md:h-96 w-full bg-cover">
+                    <div className="flex flex-col relative items-center bg-[url('assets/images/image-hero-mobile.jpg')] md:bg-[url('assets/images/image-hero-desktop.jpg')] bg-grey-custom-100  max-h-[25rem] bg-no-repeat md:h-96 w-full bg-cover">
                       <Navbar />
                         <Home />
                     </div>
