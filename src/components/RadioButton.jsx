@@ -19,8 +19,8 @@ const RadioButton = (props) => {
       return (
         <label htmlFor="no-reward"  className={`py-8 px-6 pb-10 grid grid-cols-[fit-content(200px)_1fr] grid-rows-[fit-content(200px)_1fr]  gap-x-5 gap-y-3 justify-start items-start cursor-pointer  border-2 rounded-lg border-slate-300 ${rewardSelected === "" ? 'border-2 border-blue-button-primary' : 'border-slate-300'}`}>
               <input type="radio" id='no-reward' name='reward' value="1" className='col-start-1 col-end-2 row-start-1 row-end-2 self-center justify-self-center w-11 h-7 border-2 'onChange={() => handleCheckedModal("")} />
-              <h2 className='text-black text-[17px] font-bold '>Pledge with no reward</h2>
-              <p className='text-grey-custom-500 leading-7 row-end-3 col-start-1 col-end-4 md:col-start-2 md:col-end-4'> Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
+              <span className='text-black text-[17px] font-bold '>Pledge with no reward</span>
+              <span className='text-grey-custom-500 leading-7 row-end-3 col-start-1 col-end-4 md:col-start-2 md:col-end-4'> Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</span>
         </label>
       )
     }
