@@ -1,5 +1,4 @@
 import React from 'react'
-import CurrencyFormat from 'react-currency-format';
 import {useContext, useEffect, useState, useRef } from 'react';
 import ModalContext from 'context/modal/ModalContext';
 import DataContext from "context/data/DataContext";
@@ -32,23 +31,15 @@ const Modal = ({dataProject}) => {
         })
         window.scrollTo({top: 0, behavior: 'smooth'})
       }
-      dataProject.map( (e) => {
+      dataProject.map((e) => {
         if(rewardId === e.id) {
-          e.amount -= 1;
+          return e.amount -= 1;
         }
       })
       dataItem.backed = parseInt(dataItem.backed) + parseInt(value);
       dataItem.backers = parseInt(dataItem.backers) + 1;
       // if (dataItem.rewards)
       setTimeout(setModal, 500)
-    }
-
-    const handleCheckedModal = (e) => {
-      const newReward = e
-      dispatch({
-        type: 'SELECT_RADIO',
-        payload: newReward
-      })
     }
 
     const handleInput = (e) => {
@@ -144,7 +135,6 @@ const Modal = ({dataProject}) => {
                 </div>
               )
             })}
-
           </div>
         </div>
     </>

@@ -12,7 +12,7 @@ import Modal from 'components/Modal';
 
 export const Home = () => {
   const {data} = useContext(DataContext)
-  const {modal, dispatch} = useContext(ModalContext)
+  const {dispatch} = useContext(ModalContext)
   const {bookmark} = useContext(BookmarkContext)
   const about = data.item.about;
   const rewards = data.item.rewards;

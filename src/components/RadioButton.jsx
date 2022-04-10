@@ -1,5 +1,6 @@
 import React from 'react'
 import {useContext} from 'react';
+import propTypes from 'prop-types'
 import ModalContext from 'context/modal/ModalContext'
 import CurrencyFormat from 'react-currency-format';
 
@@ -46,6 +47,16 @@ const RadioButton = (props) => {
 
   </label>
   )
+}
+
+RadioButton.propTypes = {
+  id: propTypes.string,
+  status: propTypes.number,
+  name: propTypes.string,
+  amount: propTypes.number,
+  pledge: propTypes.number,
+  description: propTypes.string,
+  noReward: propTypes.bool
 }
 
 export default RadioButton

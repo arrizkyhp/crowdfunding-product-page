@@ -5,7 +5,7 @@ import ModalContext from 'context/modal/ModalContext';
 
 const ProjectCard = ({ reward }) => {
 
-    const {modal, dispatch} = useContext(ModalContext)
+    const {dispatch} = useContext(ModalContext)
 
     const handleSelect = (e) => {
         dispatch({
