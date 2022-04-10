@@ -29,14 +29,14 @@ const RadioButton = (props) => {
     <label htmlFor={props.id} key={props.id} className={`py-8 px-6 pb-5 grid grid-cols-[fit-content(200px)_1fr] grid-rows-[1fr_fit-content(200px)]  gap-x-5 gap-y-4 justify-start items-start ${props.status === 1 ? 'cursor-pointer' : 'cursor-not-allowed '}`} >
       <input type="radio" id={props.id} name='reward' value={props.id} className='w-11 h-7 border-2 col-start-1 col-end-2 row-start-1 row-end-2 self-center justify-self-center ' disabled={props.status === 1 ? '' : 'disabled'} onChange={() => handleCheckedModal(props.id)} checked={rewardSelected === props.id ? true : false }/>
       {/* <div className='grid grid-cols-[1fr_fit-content(200px)] grid-rows-[fit-content(200px)_1fr_1fr] md:grid-rows-[fit-content(200px)_1fr] justify-between items-start'> */}
-        <h1 className="flex gap-x-4 flex-col md:flex-row">
+        <span className="flex gap-x-4 flex-col md:flex-row">
           <span className={`text-black text-[17px] ${props.status === 1 ? '' : 'text-slate-400'} font-bold`}>{props.name}</span>
           <span className={`${props.status === 1 ? 'text-blue-button-primary' : 'text-blue-button-primary-100'} font-medium`}>Pledge <CurrencyFormat value={props.pledge} displayType={'text'} thousandSeparator prefix={'$'} /> or more</span>
-        </h1>
-        <h2 className="flex gap-2 items-center col-start-1 col-end-4  md:col-start-3 md:col-end-4 row-start-3 row-end-4 md:row-start-1 md:row-end-2">
+        </span>
+        <span className="flex gap-2 items-center col-start-1 col-end-4  md:col-start-3 md:col-end-4 row-start-3 row-end-4 md:row-start-1 md:row-end-2">
           <span className={`text-black font-bold text-lg ${props.status === 1 ? '' : 'text-slate-400'}`}>{props.amount}</span>
           <span className={`${props.status === 1 ? 'text-slate-500' : 'text-slate-300'} text-sm`}>left</span>
-        </h2>
+        </span>
         <span className={`${props.status === 1 ? 'text-slate-500' : 'text-slate-400'} leading-7 row-start-2 row-end-3 col-start-1 col-end-4 md:col-start-2 md:col-end-4`}>{props.description}</span>
       {/* </div> */}
   </label>
