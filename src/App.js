@@ -9,24 +9,24 @@ import { Home } from "./pages/Home";
 
 function App() {
   return (
-    <NavbarProvider>
-      <DataProvider>
-        <ModalProvider>
-          <BookmarkProvider>
-            <Router>
-              <div className="flex flex-col justify-between font-commisioner">
-                <div className="flex flex-col relative items-center bg-[url('assets/images/image-hero-mobile.jpg')] md:bg-[url('assets/images/image-hero-desktop.jpg')]  max-h-[25rem] bg-no-repeat md:h-96 w-full bg-cover">
-                  <Navbar />
-                  <Routes>
-                    <Route exact path="/" element={<Home />} />
-                  </Routes>
+    <Router>
+      <NavbarProvider>
+        <DataProvider>
+          <ModalProvider>
+            <BookmarkProvider>
+                <div className="flex flex-col justify-between font-commisioner">
+                  <div className="flex flex-col relative items-center bg-[url('assets/images/image-hero-mobile.jpg')] md:bg-[url('assets/images/image-hero-desktop.jpg')]  max-h-[25rem] bg-no-repeat md:h-96 w-full bg-cover">
+                    <Navbar />
+                    <Routes>
+                      <Route exact path="/" element={<Home />} />
+                    </Routes>
+                  </div>
                 </div>
-              </div>
-            </Router>
-          </BookmarkProvider>
-        </ModalProvider>
-      </DataProvider>
-    </NavbarProvider>
+            </BookmarkProvider>
+          </ModalProvider>
+        </DataProvider>
+      </NavbarProvider>
+    </Router>
   );
 }
 
