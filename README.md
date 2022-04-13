@@ -61,7 +61,7 @@ maybe i try adding darkmode???
 
 ### Useful resources
 
-- [Modal Select](https://codepen.io/adamstuartclark/pen/pbYVYR) - This helped me for understanding how select in modal project.
+- [Radio Selects: Flexbox and Fun](https://codepen.io/adamstuartclark/pen/pbYVYR) - This helped me how to make select in modal.
 - [Passing onChange event from child to parent in React](https://stackoverflow.com/questions/62334342/passing-onchange-event-from-child-to-parent-in-react) - This stackoverflow help me on passing event from child to parent in React.
 
 ## Author
