@@ -51,7 +51,7 @@ This challenge take long time 🤣 but i learn so much
 
 ### What I learned
 
-I learned that you cant put h1,div,p inside label or button, and of course im using tailwindCss for this challenge, so far i have love and hate relationship with tailwind 🤣
+I learned that you cant put h1,div,p inside label or button, and of course im using tailwindCss for this challenge.
 
 Also im start using Context for this challenge and starting to understand a little bit.
 
